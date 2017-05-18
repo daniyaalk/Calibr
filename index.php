@@ -6,47 +6,20 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-    <script type="text/javascript">
-      $(function(){
-        var submitButton = $("#submitButton");
-        var errorFlag = 0;
-
-        submitButton.click(function(){
-          $(".error-message").text(null);
-          $.ajax({
-            url: 'app/login.php',
-            method: 'POST',
-            data: {
-              username: $("#username").val(),
-              password: $("#password").val()
-            },
-            success: function(data){
-              if(data.auth == true){
-                alert("Logged In!");
-                location.reload();
-              }else{
-                $.each(data.errors, function(key, value){
-                  $("#er-"+value.field).text(value.message);
-                });
-              }
-            }
-          });
-        });
-      });
-    </script>
+    <script src="scripts/login.js" type="text/javascript"></script>
   </head>
   <body>
-    <div id="er-3" class="error-message">
+    <div id="login-er-3" class="error-message">
 
     </div>
-    <input type="text" id="username" name="username" value="" placeholder="Username"><br>
-    <div id="er-1" class="error-message">
+    <input type="text" id="login-username" name="username" value="" placeholder="Username"><br>
+    <div id="login-er-1" class="error-message">
 
     </div>
-    <input type="password" id="password" name="password" value="" placeholder="Password"><br>
-    <div id="er-2" class="error-message">
+    <input type="password" id="login-password" name="password" value="" placeholder="Password"><br>
+    <div id="login-er-2" class="error-message">
 
     </div>
-    <input type="submit" id="submitButton" name="submit" value="Log In">
+    <input type="submit" id="login-submitButton" name="submit" value="Log In">
   </body>
 </html>

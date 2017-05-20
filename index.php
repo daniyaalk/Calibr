@@ -1,3 +1,9 @@
+<?php
+
+  
+
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,5 +27,10 @@
 
     </div>
     <input type="submit" id="login-submitButton" name="submit" value="Log In">
+
+    <hr>
+    <div class="list-posts">
+
+    </div>
   </body>
 </html>

@@ -1,15 +1,8 @@
 <?php
-
-<<<<<<< HEAD
-
-
- ?>
-
-=======
   session_start();
 
  ?>
->>>>>>> login
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -46,9 +39,8 @@
       }
      ?>
     </div>
-    <input type="submit" id="login-submitButton" name="submit" value="Log In">
-
     <hr>
+
     <div class="list-posts">
 
     </div>

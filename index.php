@@ -1,9 +1,15 @@
 <?php
 
-  
+<<<<<<< HEAD
+
 
  ?>
 
+=======
+  session_start();
+
+ ?>
+>>>>>>> login
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,16 +21,30 @@
     <script src="scripts/login.js" type="text/javascript"></script>
   </head>
   <body>
-    <div id="login-er-3" class="error-message">
+    <?php
 
-    </div>
-    <input type="text" id="login-username" name="username" value="" placeholder="Username"><br>
-    <div id="login-er-1" class="error-message">
+      if(!isset($_SESSION['username'])){
+        echo '
 
-    </div>
-    <input type="password" id="login-password" name="password" value="" placeholder="Password"><br>
-    <div id="login-er-2" class="error-message">
+        <div id="login-er-3" class="error-message">
 
+        </div>
+        <input type="text" id="login-username" name="username" value="" placeholder="Username"><br>
+        <div id="login-er-1" class="error-message">
+
+        </div>
+        <input type="password" id="login-password" name="password" value="" placeholder="Password"><br>
+        <div id="login-er-2" class="error-message">
+
+        </div>
+        <input type="submit" id="login-submitButton" name="submit" value="Log In">
+
+        ';
+      }
+      else{
+        echo "<a href='logout.php'>Log Out</a>";
+      }
+     ?>
     </div>
     <input type="submit" id="login-submitButton" name="submit" value="Log In">
 
@@ -32,5 +52,6 @@
     <div class="list-posts">
 
     </div>
+
   </body>
 </html>

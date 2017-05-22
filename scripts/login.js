@@ -1,8 +1,9 @@
 $(function(){
-  var submitButton = $("#login-submitButton");
+  var loginForm = $("#loginForm");
   var errorFlag = 0;
 
-  submitButton.click(function(){
+  loginForm.submit(function(){
+    $(".error-message").hide();
     $(".error-message").text(null);
     $.ajax({
       url: 'app/login.php',
@@ -13,10 +14,10 @@ $(function(){
       },
       success: function(data){
         if(data.auth == true){
-          alert("Logged In!");
           location.reload();
         }else{
           $.each(data.errors, function(key, value){
+            $("#login-er-"+value.field).show();
             $("#login-er-"+value.field).text(value.message);
           });
         }

@@ -1,19 +1,8 @@
 <?php
 
-  session_start();
-
+  $_title = "Home";
+  require_once "header.php";
  ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Calibr - Sign In</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-    <script src="scripts/login.js" type="text/javascript"></script>
-  </head>
-  <body>
     <?php
 
       if(!isset($_SESSION['username'])){
@@ -39,5 +28,8 @@
       }
      ?>
 
-  </body>
-</html>
+<?php
+
+  require_once "footer.php";
+
+ ?>

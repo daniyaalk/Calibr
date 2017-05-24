@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- End bootstrap links -->
+    <!-- FontAwesome -->
+    <script src="https://use.fontawesome.com/fb710085a5.js"></script>
+
 
     <!-- Login Script -->
     <script type="text/javascript" src="scripts/login.js"></script>
@@ -78,7 +81,18 @@
           <?php
             else:
           ?>
-            <li></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i> <?php echo $_SESSION["username"]; ?>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Subscriptions</a></li>
+              <li><a href="#">Profile</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="logout.php">Log Out</a></li>
+            </ul>
+          </li>
           <?php
             endif;
           ?>

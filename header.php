@@ -31,6 +31,8 @@
 
     <!-- Login Script -->
     <script type="text/javascript" src="scripts/login.js"></script>
+    <!-- Logout Script -->
+    <script type="text/javascript" src="scripts/logout.js"></script>
    </head>
    <body>
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
@@ -40,7 +42,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Sign In</h4>
           </div>
-          <form id="loginForm" action="javascript: void(0);">
+          <form id="loginForm" action="javascript: login();">
             <div class="modal-body">
               <p>
                 <div class="form">
@@ -90,7 +92,7 @@
               <li><a href="#">Subscriptions</a></li>
               <li><a href="#">Profile</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="logout.php">Log Out</a></li>
+              <li><a href="javascript: logout();">Log Out</a></li>
             </ul>
           </li>
           <?php

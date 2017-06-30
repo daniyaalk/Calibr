@@ -62,7 +62,40 @@
             </div>
             <div class="modal-footer">
               <input type="submit" id="login-submitButton" class="btn btn-primary" value="Sign In"></input>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Register</button>
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#registerModal" data-dismiss="modal">Register</button>
+            </div>
+          </form>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Register</h4>
+          </div>
+          <form id="loginForm" action="javascript: login();">
+            <div class="modal-body">
+              <p>
+                <div class="form">
+                  <div id="register-er-3" class="error-message alert alert-danger">
+
+                  </div>
+                  <input class="form-control" type="text" id="register-username" name="username" value="" placeholder="Username"><br>
+                  <div id="register-er-1" class="error-message alert alert-danger">
+
+                  </div>
+                  <input class="form-control" type="password" id="register-password" name="password" value="" placeholder="Password"><br>
+                  <div id="register-er-2" class="error-message alert alert-danger">
+
+                  </div>
+                </div>
+              </p>
+            </div>
+            <div class="modal-footer">
+              <input type="submit" id="login-submitButton" class="btn btn-primary" value="Register"></input>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
           </form>
         </div><!-- /.modal-content -->

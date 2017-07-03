@@ -14,7 +14,7 @@ git clone https://github.com/drtweety/Calibr.git && cd Calibr
 sudo apt-get install ruby
 sudo gem -i sass
 ```
-5. Compile SASS from `sass/main.sass` to `css/master.css`
+5. Compile SASS from `sass/styles` to `css/`
 ```
-sass sass/main.sass:css/master.css
+sass --update sass/styles/:css/
 ```

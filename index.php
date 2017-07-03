@@ -31,18 +31,26 @@
                 Physics
               </div>
             </a>
-            <div class="grade-subjects-entry">
-              Chemistry
-            </div>
-            <div class="grade-subjects-entry">
-              Mathematics
-            </div>
-            <div class="grade-subjects-entry">
-              English
-            </div>
-            <div class="grade-subjects-entry">
-              Computer Science
-            </div>
+            <a href="#">
+              <div class="grade-subjects-entry">
+                Chemistry
+              </div>
+            </a>
+            <a href="#">
+              <div class="grade-subjects-entry">
+                Mathematics
+              </div>
+            </a>
+            <a href="#">
+              <div class="grade-subjects-entry">
+                English
+              </div>
+            </a>
+            <a href="#">
+              <div class="grade-subjects-entry">
+                Computer Science
+              </div>
+            </a>
           </div>
          </div>
        </div>
@@ -58,18 +66,26 @@
                   Physics
                 </div>
               </a>
-              <div class="grade-subjects-entry">
-                Chemistry
-              </div>
-              <div class="grade-subjects-entry">
-                Mathematics
-              </div>
-              <div class="grade-subjects-entry">
-                English
-              </div>
-              <div class="grade-subjects-entry">
-                Computer Science
-              </div>
+              <a href="#">
+                <div class="grade-subjects-entry">
+                  Chemistry
+                </div>
+              </a>
+              <a href="#">
+                <div class="grade-subjects-entry">
+                  Mathematics
+                </div>
+              </a>
+              <a href="#">
+                <div class="grade-subjects-entry">
+                  English
+                </div>
+              </a>
+              <a href="#">
+                <div class="grade-subjects-entry">
+                  Computer Science
+                </div>
+              </a>
             </div>
           </div>
          </div>

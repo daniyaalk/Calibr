@@ -3,6 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+-- Generation Time: Jul 05, 2017 at 10:21 PM
 -- Server version: 5.7.18-0ubuntu0.16.04.1
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -16,6 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+-- Database: `Calibr`
 --
 
 -- --------------------------------------------------------
@@ -30,6 +32,7 @@ CREATE TABLE `curriculums` (
   `country` varchar(255) NOT NULL,
   `locale` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 
@@ -48,6 +51,7 @@ CREATE TABLE `posts` (
   `user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 -- --------------------------------------------------------
 
 --
@@ -57,8 +61,11 @@ CREATE TABLE `posts` (
 CREATE TABLE `subjects` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `curriculum` int(11) NOT NULL
+  `grade` tinyint(4) NOT NULL,
+  `curriculum` int(11) NOT NULL,
+  `featured` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 
@@ -76,6 +83,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+
 -- Indexes for dumped tables
 --
 
@@ -119,7 +127,6 @@ ALTER TABLE `curriculums`
 ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
-
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`

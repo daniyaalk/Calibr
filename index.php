@@ -2,6 +2,7 @@
 
   $_title = "Home";
   require_once "header.php";
+
  ?>
  <link rel="stylesheet" href="css/home.css" media="screen" title="no title" charset="utf-8">
  <!-- TODO: Work on this this later

@@ -119,6 +119,7 @@ ALTER TABLE `curriculums`
 ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`

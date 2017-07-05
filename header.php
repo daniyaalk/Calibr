@@ -1,7 +1,6 @@
 <?php
 
   session_start();
-
   //generate title for header
   if(empty($_title)){
     $_title = "Calibr";

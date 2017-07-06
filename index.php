@@ -29,7 +29,7 @@
  <link rel="stylesheet" href="css/home.css" media="screen" title="no title" charset="utf-8">
  <!-- TODO: Work on this this later
  <div class="catch">
-   <div class="container">
+   <div class="content">
      <div class="catch-text">
        <div class="catch-header">
          Hi.
@@ -41,7 +41,7 @@
  </div>
  -->
  <div class="subject-listings">
-   <div class="container">
+   <div class="content">
      <div class="row">
        <div class="col-xs-12 col-lg-6">
          <div class="grade-subjects grade-subjects-left">

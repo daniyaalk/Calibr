@@ -20,7 +20,7 @@
     }
     public function echoAllSubjects(){
       while($subject = $this->featuredSubQuery->fetch_assoc()){
-        echo "<a href='subject.php?id=".$subject['name']."'><div class='grade-subjects-entry'>".$subject['name']."</div></a>";
+        echo "<a href='subject.php?id=".$subject['id']."'><div class='grade-subjects-entry'>".$subject['name']."</div></a>";
       }
     }
   }

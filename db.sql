@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 05, 2017 at 10:21 PM
+-- Generation Time: Jul 07, 2017 at 10:34 PM
 -- Server version: 5.7.18-0ubuntu0.16.04.1
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -23,6 +23,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `chapters`
+--
+
+CREATE TABLE `chapters` (
+  `id` int(11) NOT NULL,
+  `number` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `subject` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `curriculums`
 --
 
@@ -32,7 +45,6 @@ CREATE TABLE `curriculums` (
   `country` varchar(255) NOT NULL,
   `locale` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 -- --------------------------------------------------------
 
@@ -51,7 +63,6 @@ CREATE TABLE `posts` (
   `user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
 -- --------------------------------------------------------
 
 --
@@ -65,7 +76,6 @@ CREATE TABLE `subjects` (
   `curriculum` int(11) NOT NULL,
   `featured` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 -- --------------------------------------------------------
 
@@ -83,9 +93,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
-
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `chapters`
+--
+ALTER TABLE `chapters`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `curriculums`
@@ -116,6 +131,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `chapters`
+--
+ALTER TABLE `chapters`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `curriculums`
 --

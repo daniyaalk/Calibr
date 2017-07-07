@@ -37,7 +37,7 @@
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <?php
 
-  $getChapters = $db->query("SELECT * FROM chapters WHERE subject={$_GET['id']}");
+  $getChapters = $db->query("SELECT * FROM chapters WHERE subject={$_GET['id']} ORDER BY number ASC");
 
   while($chapter = $getChapters->fetch_assoc()){
     echo '
@@ -46,7 +46,7 @@
       <div class="panel-heading" role="tab" id="heading'.$chapter['id'].'">
         <h4 class="panel-title">
           <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse'.$chapter['id'].'" aria-expanded="false" aria-controls="collapse'.$chapter['id'].'">
-            '.$chapter{'name'}.'
+            '.$chapter['id'].'. '.$chapter['name'].'
           </a>
         </h4>
       </div>

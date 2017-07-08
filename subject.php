@@ -35,31 +35,31 @@
     <h1><?php echo $subjectInformation[1]; ?> <small>Grade <?php echo $subjectInformation[2]; ?></small></h1>
   </div>
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <?php
+    <?php
 
-  $getChapters = $db->query("SELECT * FROM chapters WHERE subject={$_GET['id']} ORDER BY number ASC");
+    $getChapters = $db->query("SELECT * FROM chapters WHERE subject={$_GET['id']} ORDER BY number ASC");
 
-  while($chapter = $getChapters->fetch_assoc()){
-    echo '
+    while($chapter = $getChapters->fetch_assoc()){
+      echo '
 
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="heading'.$chapter['id'].'">
-        <h4 class="panel-title">
-          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse'.$chapter['id'].'" aria-expanded="false" aria-controls="collapse'.$chapter['id'].'">
-            '.$chapter['id'].'. '.$chapter['name'].'
-          </a>
-        </h4>
-      </div>
-      <div id="collapse'.$chapter['id'].'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'.$chapter['id'].'">
-        <div class="panel-body">
-          <!-- TODO: Add listing of study resources-->
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading'.$chapter['id'].'">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse'.$chapter['id'].'" aria-expanded="false" aria-controls="collapse'.$chapter['id'].'">
+              '.$chapter['id'].'. '.$chapter['name'].'
+            </a>
+          </h4>
+        </div>
+        <div id="collapse'.$chapter['id'].'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'.$chapter['id'].'">
+          <div class="panel-body">
+            <!-- TODO: Add listing of study resources-->
+          </div>
         </div>
       </div>
-    </div>
 
-    ';
-  }
+      ';
+    }
 
-  ?>
-</div>
+    ?>
+  </div>
 </div>

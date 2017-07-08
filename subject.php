@@ -44,7 +44,7 @@
       $chapterId = $chapter['id'];
       $chapterName = $chapter['name'];
 
-      $getTopics = $db->query("SELECT * FROM topics WHERE lesson={$chapterId} ORDER BY number ASC");
+      $getTopics = $db->query("SELECT * FROM topics WHERE chapter={$chapterId} ORDER BY number ASC");
 
       echo '
 

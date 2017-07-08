@@ -40,19 +40,35 @@
     $getChapters = $db->query("SELECT * FROM chapters WHERE subject={$_GET['id']} ORDER BY number ASC");
 
     while($chapter = $getChapters->fetch_assoc()){
+
+      $chapterId = $chapter['id'];
+      $chapterName = $chapter['name'];
+
+      $getTopics = $db->query("SELECT * FROM topics WHERE lesson={$chapterId} ORDER BY number ASC");
+
       echo '
 
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="heading'.$chapter['id'].'">
+        <div class="panel-heading" role="tab" id="heading'.$chapterId.'">
           <h4 class="panel-title">
-            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse'.$chapter['id'].'" aria-expanded="false" aria-controls="collapse'.$chapter['id'].'">
-              '.$chapter['id'].'. '.$chapter['name'].'
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse'.$chapterId.'" aria-expanded="false" aria-controls="collapse'.$chapterId.'">
+              '.$chapterId.'. '.$chapterName.'
             </a>
           </h4>
         </div>
-        <div id="collapse'.$chapter['id'].'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'.$chapter['id'].'">
+        <div id="collapse'.$chapterId.'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'.$chapterId.'">
           <div class="panel-body">
-            <!-- TODO: Add listing of study resources-->
+      ';
+
+      if($getTopics->num_rows == 0){
+        echo "No topics added for this chapter, yet";
+      }else{
+        while($topic = $getTopics->fetch_assoc()){
+          echo "<a href='topic.php?id={$topic['id']}'>".$topic['number'].". ".$topic['name']."</a><br />";
+        }
+      }
+
+      echo '
           </div>
         </div>
       </div>
@@ -61,5 +77,16 @@
     }
 
     ?>
+  </div>
+  <div class="panel panel-warning">
+    <div class="panel-heading">
+      Calibr is a crowd sorced community, become a contributor to upload your own study resources!
+    </div>
+    <div class="panel-footer">
+      <button type="button" class="btn btn-primary btn-lg btn-block">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        Sign up as a Contributor<!-- Contrubotor features will be added later -->
+      </button>
+    </div>
   </div>
 </div>

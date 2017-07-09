@@ -33,6 +33,8 @@
     <script type="text/javascript" src="scripts/login.js"></script>
     <!-- Logout Script -->
     <script type="text/javascript" src="scripts/logout.js"></script>
+    <!-- Register Script -->
+    <script type="text/javascript" src="scripts/register.js"></script>
    </head>
    <body>
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
@@ -75,7 +77,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Register</h4>
           </div>
-          <form id="loginForm" action="javascript: login();">
+          <form id="loginForm" action="javascript: register();">
             <div class="modal-body">
               <p>
                 <div class="form">
@@ -90,11 +92,15 @@
                   <div id="register-er-2" class="error-message alert alert-danger">
 
                   </div>
+                  <input class="form-control" type="password" id="register-repeatPassword" name="repeatPassword" value="" placeholder="And again"><br>
+                  <div id="register-er-4" class="error-message alert alert-danger">
+
+                  </div>
                 </div>
               </p>
             </div>
             <div class="modal-footer">
-              <input type="submit" id="login-submitButton" class="btn btn-primary" value="Register"></input>
+              <input type="submit" id="register-submitButton" class="btn btn-primary" value="Register"></input>
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
           </form>
@@ -112,7 +118,7 @@
           <?php
             if(!isset($_SESSION['username'])):
            ?>
-            <li><a href="#" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#loginModal">Sign In / Register</a></li>
           <?php
             else:
           ?>

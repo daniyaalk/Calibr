@@ -1,30 +1,12 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Jul 05, 2017 at 10:21 PM
--- Server version: 5.7.18-0ubuntu0.16.04.1
--- PHP Version: 7.0.15-0ubuntu0.16.04.4
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `Calibr`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `curriculums`
---
+CREATE TABLE `chapters` (
+  `id` int(11) NOT NULL,
+  `number` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `subject` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `curriculums` (
   `id` int(11) NOT NULL,
@@ -32,13 +14,6 @@ CREATE TABLE `curriculums` (
   `country` varchar(255) NOT NULL,
   `locale` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `posts`
---
 
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
@@ -51,13 +26,6 @@ CREATE TABLE `posts` (
   `user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
--- --------------------------------------------------------
-
---
--- Table structure for table `subjects`
---
-
 CREATE TABLE `subjects` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -66,12 +34,12 @@ CREATE TABLE `subjects` (
   `featured` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
+CREATE TABLE `topics` (
+  `id` int(11) NOT NULL,
+  `number` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `lesson` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
@@ -82,60 +50,36 @@ CREATE TABLE `users` (
   `ip` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
 
--- Indexes for dumped tables
---
+ALTER TABLE `chapters`
+  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `curriculums`
---
 ALTER TABLE `curriculums`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `posts`
---
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `subjects`
---
 ALTER TABLE `subjects`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `users`
---
+ALTER TABLE `topics`
+  ADD PRIMARY KEY (`id`);
+
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `curriculums`
---
+ALTER TABLE `chapters`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `curriculums`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `posts`
---
 ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `subjects`
---
 ALTER TABLE `subjects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `users`
---
+ALTER TABLE `topics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

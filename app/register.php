@@ -2,6 +2,8 @@
   session_start();
   require_once("DB.php");
 
+  header("Content-Type: text/json");
+
   $response = array(
     "registered" => null,
     "errors" => array()
@@ -9,9 +11,9 @@
 
   /*Debugging with inputs as GET variables, will change to POST later */
   $entered = array(
-    "username" => trim(@$_GET['username']),
-    "password" => trim(@$_GET['password']),
-    "repeatPassword" => trim(@$_GET['repeatPassword'])
+    "username" => trim(@$_POST['username']),
+    "password" => trim(@$_POST['password']),
+    "repeatPassword" => trim(@$_POST['repeatPassword'])
   );
 
   $errors = array();
@@ -37,7 +39,7 @@
 
   if(empty($entered['repeatPassword'])) $errors[] = array(
     "field" => 4,
-    "message" => "Please enter repeat your password again"
+    "message" => "Please repeat your password again"
   );else if($entered['repeatPassword']!=$entered['password']) $errors[] = array(
     "field" => 4,
     "message" => "Repeat password does not match password"
@@ -52,7 +54,7 @@
     $userCheck = $db->query("SELECT id FROM users WHERE username='{$entered['username']}'");
     if($userCheck->num_rows != 0) $errors[] = array(
       "field" => 1,
-      "username" => "Username already exists, perhaps you're trying to login?"
+      "message" => "Username already exists, perhaps you're trying to login?"
     );
 
   }
@@ -62,12 +64,11 @@
     $response["registered"] = true;
     //register the user here
     $db->query("INSERT INTO users VALUES(NULL, '{$entered['username']}', '".password_hash($entered['password'], PASSWORD_BCRYPT)."', '', 0, '{$_SERVER['REMOTE_ADDR']}')");
+    $_SESSION['username'] = $entered['username'];
   }else{
     $response["registered"] = false;
     $response["errors"] = $errors;
   }
 
-  echo "<pre>";
-  echo json_encode($response); //Debug code
-
+  echo json_encode($response);
 ?>

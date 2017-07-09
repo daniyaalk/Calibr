@@ -33,6 +33,8 @@
     <script type="text/javascript" src="scripts/login.js"></script>
     <!-- Logout Script -->
     <script type="text/javascript" src="scripts/logout.js"></script>
+    <!-- Register Script -->
+    <script type="text/javascript" src="scripts/register.js"></script>
    </head>
    <body>
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
@@ -116,7 +118,7 @@
           <?php
             if(!isset($_SESSION['username'])):
            ?>
-            <li><a href="#" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#loginModal">Sign In / Register</a></li>
           <?php
             else:
           ?>

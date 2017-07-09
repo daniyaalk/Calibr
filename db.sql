@@ -34,8 +34,8 @@ CREATE TABLE `profiles` (
   `teacher` tinyint(1) NOT NULL,
   `curriculum` int(11) NOT NULL,
   `grade` int(11) NOT NULL,
-  `expertise_subject` int(11) NOT NULL,
   `contributor` tinyint(1) NOT NULL,
+  `score` int(11) NOT NULL,
   `email_verified` tinyint(4) NOT NULL,
   `profile_verified` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -59,7 +59,6 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `score` int(11) NOT NULL,
   `ip` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

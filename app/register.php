@@ -1,5 +1,4 @@
 <?php
-
   session_start();
   require_once("DB.php");
 
@@ -36,10 +35,10 @@
     "message" => "Password must be longer than 5 characters"
   );
 
-  if(empty($entered['repeatPassword'])) $errors = array(
+  if(empty($entered['repeatPassword'])) $errors[] = array(
     "field" => 4,
     "message" => "Please enter repeat your password again"
-  );else if($entered['repeatPassword']!=$entered['password']) $errors = array(
+  );else if($entered['repeatPassword']!=$entered['password']) $errors[] = array(
     "field" => 4,
     "message" => "Repeat password does not match password"
   );
@@ -62,7 +61,7 @@
   if(empty($errors)){
     $response["registered"] = true;
     //register the user here
-    
+    $db->query("INSERT INTO users VALUES(NULL, '{$entered['username']}', '".password_hash($entered['password'], PASSWORD_BCRYPT)."', '', 0, '{$_SERVER['REMOTE_ADDR']}')");
   }else{
     $response["registered"] = false;
     $response["errors"] = $errors;

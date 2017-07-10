@@ -129,7 +129,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a href="#">Subscriptions</a></li>
-              <li><a href="#">Profile</a></li>
+              <li><a href="myprofile.php">Profile</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="javascript: logout();">Log Out</a></li>
             </ul>

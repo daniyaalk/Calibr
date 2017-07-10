@@ -26,6 +26,20 @@ CREATE TABLE `posts` (
   `user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `profiles` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `teacher` tinyint(1) NOT NULL,
+  `curriculum` int(11) NOT NULL,
+  `grade` int(11) NOT NULL,
+  `contributor` tinyint(1) NOT NULL,
+  `score` int(11) NOT NULL,
+  `email_verified` tinyint(4) NOT NULL,
+  `profile_verified` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE `subjects` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -45,8 +59,6 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `score` int(11) NOT NULL,
   `ip` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -60,6 +72,10 @@ ALTER TABLE `curriculums`
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
+
 ALTER TABLE `subjects`
   ADD PRIMARY KEY (`id`);
 
@@ -68,6 +84,7 @@ ALTER TABLE `topics`
 
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
   ADD KEY `id` (`id`);
 
 
@@ -76,6 +93,8 @@ ALTER TABLE `chapters`
 ALTER TABLE `curriculums`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `profiles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `subjects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

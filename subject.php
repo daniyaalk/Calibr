@@ -83,10 +83,12 @@
       Calibr is a crowd sorced community, become a contributor to upload your own study resources!
     </div>
     <div class="panel-footer">
-      <button type="button" class="btn btn-primary btn-lg btn-block">
-        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-        Sign up as a Contributor<!-- Contrubotor features will be added later -->
-      </button>
+      <a href="contribute.php">
+        <button type="button" class="btn btn-primary btn-lg btn-block">
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+          Sign up as a Contributor<!-- Contrubotor features will be added later -->
+        </button>
+      </a>
     </div>
   </div>
 </div>

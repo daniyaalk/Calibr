@@ -38,7 +38,7 @@ CREATE TABLE `topics` (
   `id` int(11) NOT NULL,
   `number` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `lesson` int(11) NOT NULL
+  `chapter` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `users` (

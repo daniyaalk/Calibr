@@ -34,7 +34,7 @@
             <!-- Tab panes -->
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane fade" id="my-contributions">
-                ...
+
               </div>
               <div role="tabpanel" class="tab-pane fade active" id="new-contribution">.
                 <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=8a09i3xybfqx77x70s7ap7bi4n1a2330gqidx5dwk21heikz"></script>
@@ -62,7 +62,7 @@
                   ]
                 });
                 </script>
-                <form class="" action="contribute.php" method="post">
+                <form class="" action="preview.php" method="post">
                   <p>
                     <input type="text" name="title" class="form-control" placeholder="Title">
                   </p>
@@ -83,7 +83,9 @@
                       </div>
                     </div>
                   </p>
-                      <input type="submit" name="submit" value="Post" class="btn btn-primary btn-lg btn-block">
+                  <p>
+                    <input type="submit" name="submit" value="Preview & Submit" class="btn btn-primary btn-lg btn-block">
+                  </p>
                 </form>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="addition">...</div>

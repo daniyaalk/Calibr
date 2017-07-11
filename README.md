@@ -25,3 +25,4 @@ Calibr uses these libraries and vendor snippets to simplify the development proc
 2. [jQuery](http://jquery.com)
 3. [TinyMCE](https://www.tinymce.com)
 4. [fontawesome.io](http://fontawesome.io)
+5. [Mailgun](http://mailgun.org)

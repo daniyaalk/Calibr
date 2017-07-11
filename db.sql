@@ -17,13 +17,13 @@ CREATE TABLE `curriculums` (
 
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
-  `type` int(11) NOT NULL,
-  `title` varchar(150) NOT NULL,
-  `description` text NOT NULL,
-  `data` text NOT NULL,
-  `subject` int(11) NOT NULL,
-  `year` year(4) NOT NULL,
-  `user` int(11) NOT NULL
+  `title` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  `previous` varchar(255) NOT NULL,
+  `next` varchar(255) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `review` tinyint(1) NOT NULL,
+  `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `profiles` (

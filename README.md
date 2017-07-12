@@ -18,3 +18,10 @@ sudo gem -i sass
 ```bash
 sass --update sass/styles/:css/
 ```
+
+## Vendor Repos
+Calibr uses these libraries and vendor snippets to simplify the development process:
+1. [bootstrap](http://getbootstrap.com)
+2. [jQuery](http://jquery.com)
+3. [TinyMCE](https://www.tinymce.com)
+4. [fontawesome.io](http://fontawesome.io)

@@ -5,7 +5,7 @@
 
   class Mail{
 
-    private $sendingKey = "key-414b728805927fca1c14e94fb8be3378"; //Mailgun email sending key
+    private $sendingKey = ""; //Mailgun email sending key
     private $domain = "calibracademy.com";
 
     public function sendMail($to, $from, $subject, $message, $tags = array()){

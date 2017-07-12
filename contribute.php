@@ -19,7 +19,7 @@
     //Check if profile exists, email is verified, and is signed up as a contributor
     if($UserInfo->checkProfileExists()){
 
-      if($UserInfo->getProfile("email_verified")[0] == 2){
+      if($UserInfo->getProfile("email_verified")[0] == 1){
         ?>
         <div>
 

@@ -5,24 +5,17 @@
 
   class Mail{
 
-    private $verificationKey = ""; //Mailgun email verification key
-    private $sendingKey = ""; //Mailgun email sending key
+    private $sendingKey = "key-414b728805927fca1c14e94fb8be3378"; //Mailgun email sending key
     private $domain = "calibracademy.com";
 
-    public function verifyEmail($address){
-      $mgClient = new Mailgun($this->verificationKey);
-      $request = $mgClient->get("address/validate", array("address" => $address));
-
-      return $request->http_response_body->is_valid;
-    }
-
-    public function sendMail($to, $from, $subject, $message){
+    public function sendMail($to, $from, $subject, $message, $tags = array()){
       $mgClient = new Mailgun($this->sendingKey);
       $request = $mgClient->sendMessage($this->domain, array(
         "from" => $from,
         "to" => $to,
         "subject" => $subject,
-        "text" => $message
+        "html" => $message,
+        "o:tag" => $tags
       ));
 
       return $request;

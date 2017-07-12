@@ -15,8 +15,7 @@
   require_once "userInfo.php";
   $UserInfo = new UserInfo($_SESSION['username'], $DB);
 
-  //USING GET VARIABLES FOR DEBUGGING. CHANGE TO POST PRIOR TO PRODUCTION
-  $email = $_GET['email'];
+  $email = $_POST['email'];
 
   $response = array(
     "changed" => NULL,

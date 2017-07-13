@@ -16,6 +16,7 @@
   }
 ?>
 <script type="text/javascript" src="scripts/updateemail.js"></script>
+<script type="text/javascript" src="scripts/updatepassword.js"></script>
 <div class="settings-menu margin-10-div">
   <div class="container">
     <div class="row">
@@ -28,7 +29,42 @@
       </div>
       <div class="col-xs-12 col-md-9 col-lg-8">
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane fade <?php echo ($active=="password")?"in active":""; ?>" id="password">Password</div>
+          <div role="tabpanel" class="tab-pane fade <?php echo ($active=="password")?"in active":""; ?>" id="password">
+            <h3>Update Password</h3>
+            <div id="password-update" >
+              <p>
+                <div id="current-password-group">
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></div>
+                    <input type="password" class="form-control" placeholder="Current Password" id="current-password-field">
+                  </div>
+                  <span id="current-password-block" class="help-block"></span>
+                </div>
+              </p>
+              <p>
+                <div id="new-password-group">
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></div>
+                    <input type="password" class="form-control" placeholder="New Password" id="new-password-field">
+                  </div>
+                  <span id="new-password-block" class="help-block"></span>
+                </div>
+              </p>
+              <p>
+                <div id="repeat-password-group">
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></div>
+                    <input type="password" class="form-control" placeholder="And again..." id="repeat-password-field">
+                  </div>
+                  <span id="repeat-password-block" class="help-block"></span>
+                </div>
+              </p>
+              <p>
+                <button onclick="javascript: updatePassword();" name="button" class="btn btn-primary btn-large btn-block">Change Password</button>
+              </p>
+            </div>
+          </div>
+
           <div role="tabpanel" class="tab-pane fade <?php echo ($active=="email")?"in active":""; ?>" id="email">
             <h3>Email Settings</h3>
             <?php

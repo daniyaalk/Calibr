@@ -63,7 +63,7 @@
       $query = "UPDATE profiles SET email_verified=0, email='{$email}' WHERE userid='{$UserInfo->userId}'";
     }
 
-    $DB->query("INSERT INTO verification VALUES(NULL, '{$UserInfo->userId}', '{$hash}')");
+    $DB->query("INSERT INTO verification VALUES(NULL, '{$UserInfo->userId}', '{$hash}', 0)");
     $DB->query($query);
     $Mail->sendMail(
       $email,

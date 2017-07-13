@@ -7,7 +7,7 @@
 
     $key = $_GET['key'];
 
-    $query = $DB->query("SELECT id FROM verification WHERE hash='{$key}'");
+    $query = $DB->query("SELECT id FROM verification WHERE hash='{$key}' AND type=0");
 
     if($query->num_rows == 0){
       die("Your link is invalid!");

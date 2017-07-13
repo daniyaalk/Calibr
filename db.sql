@@ -22,6 +22,8 @@ CREATE TABLE `posts` (
   `previous` varchar(255) NOT NULL,
   `next` varchar(255) NOT NULL,
   `userid` int(11) NOT NULL,
+  `topic` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
   `review` tinyint(1) NOT NULL,
   `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -62,6 +64,13 @@ CREATE TABLE `users` (
   `ip` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `verification` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `hash` varchar(32) NOT NULL,
+  `type` int(11) NOT NULL DEFAULT '0' COMMENT '0 for email verification, 1 for password verification.'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 ALTER TABLE `chapters`
   ADD PRIMARY KEY (`id`);
@@ -87,6 +96,9 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`),
   ADD KEY `id` (`id`);
 
+ALTER TABLE `verification`
+  ADD PRIMARY KEY (`id`);
+
 
 ALTER TABLE `chapters`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
@@ -101,4 +113,6 @@ ALTER TABLE `subjects`
 ALTER TABLE `topics`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `verification`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

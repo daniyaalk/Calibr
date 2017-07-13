@@ -4,7 +4,7 @@ function updateEmail(email = $("#email-field").val()){
   $("#email-block").text(null);
 
   $.ajax({
-    method: "GET",
+    method: "POST",
     url: "app/updateemail.php",
     data:{
       "email": email

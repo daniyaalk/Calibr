@@ -14,7 +14,7 @@
     }
 
     $query = $DB->query("UPDATE profiles
-      SET email_verified=2
+      SET email_verified=1
       WHERE userid=(SELECT userid
         FROM verification
         WHERE hash='{$key}'

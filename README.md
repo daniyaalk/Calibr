@@ -9,12 +9,13 @@ git clone https://github.com/drtweety/Calibr.git && cd Calibr
 2. Create Database in MySQL and add a user with all privileges to said database.
 3. Run SQL script in `db.sql`
 4. Assign values to `DB`, `hostname`, `user` and `password` in `app/DB.sql`
-5. Install Ruby, and then SASS:
+5. Enter Mailgun private API key in `app/Mail.php`
+6. Install Ruby, and then SASS:
 ```bash
 sudo apt-get install ruby
 sudo gem -i sass
 ```
-6. Compile SASS from `sass/styles` to `css/`
+7. Compile SASS from `sass/styles` to `css/`
 ```bash
 sass --update sass/styles/:css/
 ```

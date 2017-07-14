@@ -35,6 +35,8 @@
     <script type="text/javascript" src="scripts/logout.js"></script>
     <!-- Register Script -->
     <script type="text/javascript" src="scripts/register.js"></script>
+    <!--Alerts Script-->
+    <script type="text/javascript" src="scripts/alerts.js"></script>
    </head>
    <body>
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
@@ -142,3 +144,10 @@
         </ul>
       </div>
     </nav>
+    <div class="container">
+      <div id="alerts-wrapper" class="margin-10-div">
+        <script type="text/javascript">
+          loadAlerts();
+        </script>
+      </div>
+    </div>

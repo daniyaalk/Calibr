@@ -19,6 +19,7 @@
     //Check if profile exists, email is verified, and is signed up as a contributor
     if($UserInfo->checkProfileExists()){
 
+
       if($UserInfo->getProfile("email_verified")[0] == 1){
         ?>
         <div>
@@ -36,7 +37,9 @@
               <div role="tabpanel" class="tab-pane fade" id="my-contributions">
 
               </div>
+              
               <div role="tabpanel" class="tab-pane fade in active" id="new-contribution">.
+                
                 <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=8a09i3xybfqx77x70s7ap7bi4n1a2330gqidx5dwk21heikz"></script>
                 <script type="text/javascript">
                 tinymce.init({

@@ -37,9 +37,12 @@
               <div role="tabpanel" class="tab-pane fade" id="my-contributions">
 
               </div>
-              
+
               <div role="tabpanel" class="tab-pane fade in active" id="new-contribution">.
-                
+
+                <script type="text/javascript" src="scripts/getchildren.js"></script>
+
+                <!-- Script for WYSIWYG editor-->
                 <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=8a09i3xybfqx77x70s7ap7bi4n1a2330gqidx5dwk21heikz"></script>
                 <script type="text/javascript">
                 tinymce.init({
@@ -66,6 +69,34 @@
                 });
                 </script>
                 <form class="" action="preview.php" method="post">
+                  <p>
+                    <div class="form-group">
+                      <label for="grade-selector">Grade:</label>
+                      <select class="form-control" name="grade-selector" id="grade-selector" disabled><!--Enable after document load-->
+                        <option value="0" selected disabled>Select Grade</option>
+                        <option value="12">Grade 12</option>
+                        <option value="11">Grade 11</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="subject-selector">Subject:</label>
+                      <select class="form-control" name="subject-selector" id="subject-selector" disabled>
+                        <option value="0" selected disabled>Select Subject</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="chapter-selector">Chapter:</label>
+                      <select class="form-control" name="chapter-selector" id="chapter-selector" disabled>
+                        <option value="0" selected disabled>Select Chapter</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="topic-selector">Topic:</label>
+                      <select class="form-control" name="topic-selector" id="topic-selector" disabled>
+                        <option value="0" selected disabled>Select Topic</option>
+                      </select>
+                    </div>
+                  </p>
                   <p>
                     <input type="text" name="title" class="form-control" placeholder="Title">
                   </p>

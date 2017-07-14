@@ -35,6 +35,8 @@
     <script type="text/javascript" src="scripts/logout.js"></script>
     <!-- Register Script -->
     <script type="text/javascript" src="scripts/register.js"></script>
+    <!--Alerts Script-->
+    <script type="text/javascript" src="scripts/alerts.js"></script>
    </head>
    <body>
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
@@ -129,7 +131,9 @@
             </a>
             <ul class="dropdown-menu">
               <li><a href="#">Subscriptions</a></li>
-              <li><a href="myprofile.php">Profile</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="settings.php">Settings</a></li>
+              <li><a href="myprofile.php">My Profile</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="javascript: logout();">Log Out</a></li>
             </ul>
@@ -140,3 +144,10 @@
         </ul>
       </div>
     </nav>
+    <div class="container">
+      <div id="alerts-wrapper" class="margin-10-div">
+        <script type="text/javascript">
+          loadAlerts();
+        </script>
+      </div>
+    </div>

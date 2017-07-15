@@ -20,9 +20,9 @@
     if($type == 0){
       $query = "SELECT id, name FROM subjects WHERE grade={$of}";
     }else if($type == 1){
-      $query = "SELECT id, name FROM chapters WHERE subject={$of}";
+      $query = "SELECT id, name FROM chapters WHERE subject={$of} ORDER BY number ASC";
     }else{
-      $query = "SELECT id, name FROM topics WHERE chapter={$of}";
+      $query = "SELECT id, name FROM topics WHERE chapter={$of} ORDER BY number ASC";
     }
 
     die(json_encode($DB->query($query)->fetch_all(MYSQLI_ASSOC)));

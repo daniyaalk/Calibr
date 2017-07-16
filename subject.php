@@ -5,7 +5,7 @@
   require_once "app/DB.php";
 
   $db = new DB();
-  $query = $db->query("SELECT s.id, s.name, s.grade, c.name, c.country, c.locale FROM subjects AS s, curriculums AS c WHERE s.id={$_GET['id']} AND c.id=s.curriculum");
+  $query = $db->query("SELECT s.id, s.name, s.grade, c.name, c.country, c.locale, c.id FROM subjects AS s, curriculums AS c WHERE s.id={$_GET['id']} AND c.id=s.curriculum");
 
   /*
   ~~DEBUGGING CODE~~
@@ -25,8 +25,8 @@
 <div class="container container-10-margin">
   <ol class="breadcrumb">
     <li><?php echo $subjectInformation[4]; ?></li>
-    <li><a href="#"><?php echo $subjectInformation[3]; ?></a></li>
-    <li><a href="#">Grade <?php echo $subjectInformation[2]; ?></a></li>
+    <li><?php echo $subjectInformation[3]; ?></li>
+    <li><a href="<?php echo 'grade.php?curriculum='.$subjectInformation[6].'&grade='.$subjectInformation[2]; ?>">Grade <?php echo $subjectInformation[2]; ?></a></li>
     <li><a href="#"><?php echo $subjectInformation[1]; ?></a></li>
   </ol>
 </div>
@@ -86,7 +86,7 @@
       <a href="contribute.php">
         <button type="button" class="btn btn-primary btn-lg btn-block">
           <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-          Sign up as a Contributor<!-- Contrubotor features will be added later -->
+          Visit the Contribute Page<!-- Contrubotor features will be added later -->
         </button>
       </a>
     </div>

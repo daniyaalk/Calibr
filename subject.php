@@ -86,7 +86,7 @@
       <a href="contribute.php">
         <button type="button" class="btn btn-primary btn-lg btn-block">
           <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-          Visit the Comtribute Page<!-- Contrubotor features will be added later -->
+          Visit the Contribute Page<!-- Contrubotor features will be added later -->
         </button>
       </a>
     </div>

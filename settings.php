@@ -24,7 +24,9 @@
         <ul class="nav nav-pills nav-stacked">
           <li role="presentation"<?php echo ($active=="password")?'class="active"':"";?>><a href="#password" aria-controls="password" role="tab" data-toggle="tab">Update Password</a></li>
           <li role="presentation"<?php echo ($active=="email")?'class="active"':"";?>><a href="#email" aria-controls="email" role="tab" data-toggle="tab">Email Settings</a></li>
+          <!-- Profiles will be a feature in a future release.
           <li role="presentation"<?php echo ($active=="profile")?'class="active"':"";?>><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile Settings</a></li>
+          -->
         </ul>
       </div>
       <div class="col-xs-12 col-md-9 col-lg-8">
@@ -113,7 +115,9 @@
               </p>
             </div>
           </div>
+          <!-- Profiles will be a feature in a future release.
           <div role="tabpanel" class="tab-pane fade <?php echo ($active=="profile")?"in active":""; ?>" id="profile">Profile</div>
+          -->
         </div>
       </div>
     </div>

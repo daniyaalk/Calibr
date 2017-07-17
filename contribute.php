@@ -73,8 +73,8 @@
                 </script>
                 <form class="" action="preview.php" method="post">
 
-                  <p>
                     <!--Grade Selection Field-->
+                  <p>
                     <div class="form-group">
                       <label for="grade-selector">Grade:</label>
                       <select class="form-control" name="grade-selector" id="grade-selector" disabled><!--Enable after document load-->
@@ -83,33 +83,40 @@
                         <option value="11">Grade 11</option>
                       </select>
                     </div>
+                  </p>
                     <!--End Grade Selection Field-->
                     <!--Subject Selection Field-->
+                  <p>
                     <div class="form-group">
                       <label for="subject-selector">Subject:</label>
                       <select class="form-control" name="subject-selector" id="subject-selector" disabled>
                         <option value="0" selected disabled>Select Subject</option>
                       </select>
                     </div>
+                  </p>
                     <!--End Subject Selection Field-->
                     <!--Chapter Selection Field-->
+                  <p>
                     <div class="form-group">
                       <label for="chapter-selector">Chapter:</label>
                       <select class="form-control" name="chapter-selector" id="chapter-selector" disabled>
                         <option value="0" selected disabled>Select Chapter</option>
                       </select>
                     </div>
+                  </p>
                     <!--End Chapter Selection Field-->
                     <!--Topic Selection Field-->
+                  <p>
                     <div class="form-group">
                       <label for="topic-selector">Topic:</label>
                       <select class="form-control" name="topic-selector" id="topic-selector" disabled>
                         <option value="0" selected disabled>Select Topic</option>
                       </select>
                     </div>
-                    <!--End Topic Selection Field-->
                   </p>
+                    <!--End Topic Selection Field-->
 
+                  <!--Title field-->
                   <p>
                     <div class="form-group">
                       <label for="post-title">Title:</label>
@@ -117,19 +124,21 @@
                     </div>
                   </p>
 
+                  <!--Text area-->
                   <p>
                     <textarea name="text"></textarea>
                   </p>
 
+                  <!--Next and previous entry fields-->
                   <p>
                     <div class="form-group">
                       <div class="container-fluid">
                         <div class="row">
                           <div class="col-md-6">
-                            <input type="text" name="title" class="form-control" placeholder="Previous Entry(Optional)">
+                            <input type="text" name="previous-entry" class="form-control" placeholder="Previous Entry(Optional)">
                           </div>
                           <div class="col-md-6">
-                            <input type="text" name="title" class="form-control" placeholder="Next Entry(Optional)">
+                            <input type="text" name="next-entry" class="form-control" placeholder="Next Entry(Optional)">
                           </div>
                         </div>
                       </div>

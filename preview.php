@@ -22,16 +22,27 @@
   ");
   $meta_info = $get_meta_info->fetch_assoc();
 ?>
+<script type="text/javascript" src="scripts/submitpost.js"></script>
 <div class="container">
   <div class="page-header">
-    <h1><?php echo $_POST['title']." <small>{$meta_info['t_name']} | {$meta_info['c_name']}</small>"; ?></h1>
+    <h1><?php echo "<span id='post-title'>".$_POST['title']."</span> <small>{$meta_info['t_name']} | {$meta_info['c_name']}</small>"; ?></h1>
   </div>
+  <div style="display: none;" id="topic-id"><?php echo $post_topic_id ?></div>
   <div class="row">
-    <div class="col-md-8">
-      <?php echo $post_text; ?>
+    <div class="col-md-8 col-xs-12">
+      <div id="post-text">
+        <?php echo $post_text; ?>
+      </div>
+      <button type="button" name="button" onclick="javascript: submitPost();" class="btn btn-lg btn-block">Post</button>
     </div>
     <div class="col-md-4">
-      
+      <div class="btn-group">
+        <?php
+          if(isset($_POST['next'])){
+            echo "<button class='btn'>Next</btn>";
+          }
+        ?>
+      </div>
     </div>
   </div>
 </div>

@@ -130,6 +130,7 @@
                   </p>
 
                   <!--Next and previous entry fields-->
+                  <!--This Feature will be added later
                   <p>
                     <div class="form-group">
                       <div class="container-fluid">
@@ -144,7 +145,7 @@
                       </div>
                     </div>
                   </p>
-
+                  -->
                   <p>
                     <input type="submit" name="submit" value="Preview & Submit" class="btn btn-primary btn-lg btn-block">
                   </p>
@@ -160,7 +161,7 @@
       }else{
         ?>
         <div class="container container-10-margin">
-          <div class="alert alert-danger" role="alert">Looks like you haven't verified your email yet! <a href="#" class="alert-link">Click here to get started.</a></div>
+          <div class="alert alert-danger" role="alert">Looks like you haven't verified your email yet! <a href="settings.php?active=email" class="alert-link">Click here to get started.</a></div>
         </div>
         <?php
       }
@@ -169,7 +170,7 @@
       ?>
 
       <div class="container container-10-margin">
-        <div class="alert alert-danger" role="alert">Looks like you haven't setup your profile yet! <a href="#" class="alert-link">Click here to get started.</a></div>
+        <div class="alert alert-danger" role="alert">Looks like you haven't setup your profile yet! <a href="settings.php?active=email" class="alert-link">Click here to get started.</a></div>
       </div>
 
       <?php

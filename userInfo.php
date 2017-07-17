@@ -25,8 +25,8 @@
         }
     }
     public function getProfile($fields){
-      $this->fields = explode('|', $fields);
-      $query = $this->db->query("SELECT ".implode($this->fields, ", ")." FROM profiles WHERE userid={$this->userId}");
+      $this->fields = explode('|', $fields);  
+      $query = $this->db->query("SELECT ".implode($this->fields, ", ")." FROM profiles WHERE userId={$this->userId}");
 
       if($query->num_rows==0){
         return false;

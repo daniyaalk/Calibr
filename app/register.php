@@ -63,7 +63,7 @@
   if(empty($errors)){
     $response["registered"] = true;
     //register the user here
-    $db->query("INSERT INTO users VALUES(NULL, '{$entered['username']}', '".password_hash($entered['password'], PASSWORD_BCRYPT)."', 0, '{$_SERVER['REMOTE_ADDR']}')");
+    $db->query("INSERT INTO users VALUES(NULL, '{$entered['username']}', '".password_hash($entered['password'], PASSWORD_BCRYPT)."', '{$_SERVER['REMOTE_ADDR']}')");
     $_SESSION['username'] = $entered['username'];
   }else{
     $response["registered"] = false;

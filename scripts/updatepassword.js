@@ -17,7 +17,16 @@ function updatePassword() {
     },
     success: function(data){
       if(data.changed){
-        //TODO: add code
+        $.ajax({
+          method: 'get',
+          url: 'app/alerthandler.php',
+          data: {
+            request: 2,
+            message: 'Your password was changed successfully!',
+            type: 'success'
+          }
+        });
+        location.reload();
       }else{
         console.log(data.messages);
         $.each(data.messages,function(key, value){

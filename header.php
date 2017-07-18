@@ -130,13 +130,14 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
+              <!--Subscriptions will be added in a future release
               <li><a href="#">Subscriptions</a></li>
               <li role="separator" class="divider"></li>
+              -->
               <li><a href="settings.php">Settings</a></li>
               <!-- Profiles will be a feature in a future release.
               <li><a href="myprofile.php">My Profile</a></li>
               -->
-              <li role="separator" class="divider"></li>
               <li><a href="javascript: logout();">Log Out</a></li>
             </ul>
           </li>

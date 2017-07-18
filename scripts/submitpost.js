@@ -1,4 +1,8 @@
 function submitPost(){
+
+  $("#post-submit").attr('disabled', true);
+  $("body").css("cursor", "progress");
+
   var title = $("#post-title").text();
   var topic = $("#topic-id").text();
   var text = $("#post-text").html();
@@ -13,7 +17,7 @@ function submitPost(){
     },
     success: function(data){
       if(data.success){
-        window.location = "http://calibracademy.com/post.php?p="+data.link;
+        window.location = "post.php?p="+data.link;
       }else{
         alert("Something went wrong, try again later.");
       }

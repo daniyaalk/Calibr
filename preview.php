@@ -33,8 +33,9 @@
       <div id="post-text">
         <?php echo $post_text; ?>
       </div>
-      <button type="button" name="button" onclick="javascript: submitPost();" class="btn btn-lg btn-block">Post</button>
+      <button type="button" name="button" id="post-submit" onclick="javascript: submitPost();" class="btn btn-lg btn-block">Post</button>
     </div>
+    <!--This feature will be added later.
     <div class="col-md-4">
       <div class="btn-group">
         <?php
@@ -44,5 +45,6 @@
         ?>
       </div>
     </div>
+    -->
   </div>
 </div>

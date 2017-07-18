@@ -90,7 +90,7 @@
                 </td>
                 <td>
                   <?php
-                    if($profile[1] == 0){
+                    if($profile[1] == 0 && !empty($profile[0])){
                       echo "<span class='label label-warning'>Pending verification. <a href='javascript: updateEmail(\"{$profile[0]}\");'>Resend email?</a></span>";
                     }else if($profile[1] == 1){
                       echo "<span class='label label-success'>Verified!</span>";

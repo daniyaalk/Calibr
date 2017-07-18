@@ -113,7 +113,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="./">
-            Calibr
+            Calibr<sub>alpha</sub>
           </a>
         </div>
         <ul class="nav navbar-nav navbar-right">

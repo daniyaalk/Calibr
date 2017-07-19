@@ -134,11 +134,13 @@
               <li><a href="#">Subscriptions</a></li>
               <li role="separator" class="divider"></li>
               -->
-              <li><a href="settings.php">Settings</a></li>
+              <li><a href="contribute.php"><i class="fa fa-pencil" aria-hidden="true"></i> My Contributions</a></li>
+              <li role="seperator" class="divider"></li>
+              <li><a href="settings.php"><i class="fa fa-sliders" aria-hidden="true"></i> Settings</a></li>
               <!-- Profiles will be a feature in a future release.
               <li><a href="myprofile.php">My Profile</a></li>
               -->
-              <li><a href="javascript: logout();">Log Out</a></li>
+              <li><a href="javascript: logout();"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
             </ul>
           </li>
           <?php

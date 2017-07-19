@@ -38,31 +38,33 @@
 
               <!--Start My Contributions Tab-->
               <div role="tabpanel" class="tab-pane fade in active" id="my-contributions">
-                <?php
+                <p>
+                  <?php
 
-                  $Posts = new Posts($DB, array("id", "title", "link"), array("userid" => $userId));
+                    $Posts = new Posts($DB, array("id", "title", "link"), array("userid" => $userId));
 
-                  if($Posts->num_posts == 0){
-                    ?>
+                    if($Posts->num_posts == 0){
+                      ?>
 
-                      No Posts.
+                        <div class="alert alert-warning" role="alert">Looks like you haven't made any contributions, yet. Make one now in the <strong>New Contrubution</strong> Tab.</div>
 
-                    <?php
-                  }else{
+                      <?php
+                    }else{
 
-                    echo "<div class='list-group'>";
-                    foreach ($Posts->getPosts() as $post) {
-                      echo "<a href='post.php?p=".$post['link']."' class='list-group-item'>".$post['title']."</a>";
+                      echo "<div class='list-group'>";
+                      foreach ($Posts->getPosts() as $post) {
+                        echo "<a href='post.php?p=".$post['link']."' class='list-group-item'>".$post['title']."</a>";
+                      }
+                      echo '</div>';
+
                     }
-                    echo '</div>';
 
-                  }
-
-                ?>
+                  ?>
+                </p>
               </div>
               <!--End My Contributions Tab-->
               <!--Start New Contributions Tab-->
-              <div role="tabpanel" class="tab-pane fade" id="new-contribution">.
+              <div role="tabpanel" class="tab-pane fade" id="new-contribution">
 
                 <script type="text/javascript" src="scripts/getchildren.js"></script>
 

@@ -3,6 +3,7 @@
   require_once "header.php";
   require_once "app/DB.php";
   require_once "app/userInfo.php";
+  require 'app/Posts.php';
 
   if(!isset($_SESSION['username'])){
     ?>
@@ -27,8 +28,8 @@
           <!-- Nav tabs -->
           <div class="container container-10-margin">
             <ul class="nav nav-pills nav-justified" role="tablist">
-              <li role="presentation"><a href="#my-contributions" aria-controls="my-contributions" role="tab" data-toggle="tab">My Contributions</a></li>
-              <li role="presentation" class="active"><a href="#new-contribution" aria-controls="new-contribution" role="tab" data-toggle="tab">New Contribution</a></li>
+              <li role="presentation" class="active"><a href="#my-contributions" aria-controls="my-contributions" role="tab" data-toggle="tab">My Contributions</a></li>
+              <li role="presentation"><a href="#new-contribution" aria-controls="new-contribution" role="tab" data-toggle="tab">New Contribution</a></li>
               <li role="presentation"><a href="#addition" aria-controls="addition" role="tab" data-toggle="tab">Suggest Addition</a></li>
             </ul>
 
@@ -36,12 +37,32 @@
             <div class="tab-content">
 
               <!--Start My Contributions Tab-->
-              <div role="tabpanel" class="tab-pane fade" id="my-contributions">
+              <div role="tabpanel" class="tab-pane fade in active" id="my-contributions">
+                <?php
 
+                  $Posts = new Posts($DB, array("id", "title", "link"), array("userid" => $userId));
+
+                  if($Posts->num_posts == 0){
+                    ?>
+
+                      No Posts.
+
+                    <?php
+                  }else{
+
+                    echo "<div class='list-group'>";
+                    foreach ($Posts->getPosts() as $post) {
+                      echo "<a href='post.php?p=".$post['link']."' class='list-group-item'>".$post['title']."</a>";
+                    }
+                    echo '</div>';
+
+                  }
+
+                ?>
               </div>
               <!--End My Contributions Tab-->
               <!--Start New Contributions Tab-->
-              <div role="tabpanel" class="tab-pane fade in active" id="new-contribution">.
+              <div role="tabpanel" class="tab-pane fade" id="new-contribution">.
 
                 <script type="text/javascript" src="scripts/getchildren.js"></script>
 

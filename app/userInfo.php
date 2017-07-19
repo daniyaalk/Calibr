@@ -16,7 +16,7 @@
     }
 
     public function checkProfileExists(){
-        $query = $this->db->query("SELECT id FROM profiles WHERE id={$this->userId}");
+        $query = $this->db->query("SELECT id FROM profiles WHERE userid={$this->userId}");
 
         if($query->num_rows == 0){
           return false;

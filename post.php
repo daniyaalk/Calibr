@@ -53,5 +53,8 @@
     <div class="col-md-8 col-xs-12">
       <?php echo $post_data[2]; ?>
     </div>
+    <div class="col-md-4 col-xs-12">
+      <button type="button" name="button" class="btn btn-primary btn-block">Upvote</button>
+    </div>
   </div>
 </div>

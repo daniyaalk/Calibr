@@ -54,5 +54,18 @@
     <div class="col-md-8 col-xs-12">
       <?php echo $post_data[2]; ?>
     </div>
+    <div class="col-md-4 col-xs-12">
+      <div class="btn-group btn-group-md" role="group" aria-label="...">.
+        <div class="btn btn-default">
+          <i class="glyphicon glyphicon-circle-arrow-up"></i>
+        </div>
+        <div class="btn btn-primary active">
+          {Count}
+        </div>
+        <div class="btn btn-default">
+          <i class="glyphicon glyphicon-circle-arrow-down"></i>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

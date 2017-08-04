@@ -98,6 +98,9 @@ ALTER TABLE `subjects`
 ALTER TABLE `topics`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `upvotes`
+  ADD PRIMARY KEY (`id`);
+
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
@@ -118,6 +121,8 @@ ALTER TABLE `profiles`
 ALTER TABLE `subjects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `topics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `upvotes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

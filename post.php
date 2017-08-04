@@ -40,6 +40,7 @@
     <li><a href="#"><?php echo $post_data[11]; ?></a></li><!--Curriculum-->
     <li><a href="<?php echo "grade.php?curriculum=".$post_data[10]."&grade=".$post_data[9];?>">Grade <?php echo $post_data[9]; ?></a></li><!--Grade-->
     <li><a href="subject.php?id=<?php echo $post_data[7];?>"><?php echo $post_data[8]; ?></a></li><!--Subject-->
+    <li><a href="subject.php?id=<?php echo $post_data[7];?>"><?php echo $post_data[6]; ?></a></li><!--Chapter-->
     <li><a href="topic.php?id=<?php echo $post_data[3]; ?>"><?php echo $post_data[4]; ?></a></li><!--Topic-->
   </ol>
 </div>
@@ -54,7 +55,17 @@
       <?php echo $post_data[2]; ?>
     </div>
     <div class="col-md-4 col-xs-12">
-      <button type="button" name="button" class="btn btn-primary btn-block">Upvote</button>
+      <div class="btn-group btn-group-md" role="group" aria-label="...">.
+        <div class="btn btn-default">
+          <i class="glyphicon glyphicon-circle-arrow-up"></i>
+        </div>
+        <div class="btn btn-primary active">
+          {Count}
+        </div>
+        <div class="btn btn-default">
+          <i class="glyphicon glyphicon-circle-arrow-down"></i>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -11,7 +11,7 @@
   $post_text = $_POST['text'];
   $post_topic_id = $_POST['topic-selector'];
 
-  require_once "app/DB.php";
+  require_once "app/classes/DB.php";
   $DB = new DB();
 
   $get_meta_info = $DB->query("

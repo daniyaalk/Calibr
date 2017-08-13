@@ -2,7 +2,7 @@
 
   $_title = "Home";
   require_once "header.php";
-  require_once "app/DB.php";
+  require_once "app/classes/DB.php";
 
   $db = new DB();
 

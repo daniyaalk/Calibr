@@ -2,7 +2,7 @@
 
   if(!isset($_GET['id'])) header("Location: index.php");
 
-  require_once "app/DB.php";
+  require_once "app/classes/DB.php";
 
   $db = new DB();
   $query = $db->query("SELECT s.id, s.name, s.grade, c.name, c.country, c.locale, c.id FROM subjects AS s, curriculums AS c WHERE s.id={$_GET['id']} AND c.id=s.curriculum");

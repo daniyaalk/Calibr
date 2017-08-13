@@ -3,16 +3,16 @@
   session_start();
   header("Content-Type: text/json");
 
-  require_once "Mail.php";
+  require_once "classes/Mail.php";
   $Mail = new Mail();
 
-  require_once "Validation.php";
+  require_once "classes/Validation.php";
   $Validation = new Validation();
 
-  require_once "DB.php";
+  require_once "classes/DB.php";
   $DB = new DB();
 
-  require_once "userInfo.php";
+  require_once "classes/UserInfo.php";
   $UserInfo = new UserInfo($_SESSION['username'], $DB);
 
   $email = $_POST['email'];

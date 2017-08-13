@@ -2,7 +2,7 @@
 
   require_once "header.php";
   require_once "app/classes/DB.php";
-  require_once "app/classes/userInfo.php";
+  require_once "app/classes/UserInfo.php";
   require 'app/classes/Posts.php';
 
   if(!isset($_SESSION['username'])){

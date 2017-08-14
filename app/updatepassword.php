@@ -2,7 +2,7 @@
 
   header("Content-Type: text/json");
 
-  require_once "DB.php";
+  require_once "classes/DB.php";
   $DB = new DB();
 
   session_start();

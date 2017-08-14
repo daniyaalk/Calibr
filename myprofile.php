@@ -1,8 +1,8 @@
 <?php
 
   require_once "header.php";
-  require_once "app/DB.php";
-  require_once "app/userInfo.php";
+  require_once "app/classes/DB.php";
+  require_once "app/classes/userInfo.php";
 
   $db = new DB();
   $UserInfo = new UserInfo($_SESSION['username'], $db);

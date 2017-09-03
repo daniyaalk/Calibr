@@ -33,6 +33,8 @@
       AND curriculums.id=s.curriculum
   ");
   $post_data = $get_data->fetch_row();
+
+  $post_upvotes = $DB->query("SELECT SUM(type) FROM upvotes WHERE postid={$post_data['0']}")->fetch_row();
 ?>
 <div class="container">
   <ol class="breadcrumb">
@@ -60,7 +62,7 @@
           <i class="glyphicon glyphicon-circle-arrow-up"></i>
         </div>
         <div class="btn btn-primary active">
-          {Count}
+          <?php echo $post_upvotes[0]?>
         </div>
         <div class="btn btn-default">
           <i class="glyphicon glyphicon-circle-arrow-down"></i>

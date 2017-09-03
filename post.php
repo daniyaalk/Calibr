@@ -62,7 +62,7 @@
           <i class="glyphicon glyphicon-circle-arrow-up"></i>
         </div>
         <div class="btn btn-primary active">
-          <?php echo $post_upvotes[0]?>
+          <?php echo ($post_upvotes[0] != NULL)?$post_upvotes[0]:0; ?>
         </div>
         <div class="btn btn-default">
           <i class="glyphicon glyphicon-circle-arrow-down"></i>

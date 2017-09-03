@@ -34,7 +34,26 @@
   ");
   $post_data = $get_data->fetch_row();
 
-  $post_upvotes = $DB->query("SELECT SUM(type) FROM upvotes WHERE postid={$post_data['0']}")->fetch_row();
+  if(isset($_SESSION['username']))
+    //if session exists, check if user has upvoted post
+    $post_upvotes_query = "
+    SELECT SUM(type),
+
+    (
+    SELECT type FROM upvotes WHERE postid={$post_data['0']} AND userid=(SELECT id FROM users WHERE username='{$_SESSION['username']}')
+    )
+
+    FROM upvotes WHERE postid={$post_data['0']}
+    ";
+  else
+    $post_upvotes_query = "SELECT SUM(type) FROM upvotes WHERE postid={$post_data['0']}";
+  $post_upvotes = $DB->query($post_upvotes_query)->fetch_row();
+
+  if(!isset($post_upvotes[1]) || $post_upvotes[1] == NULL)
+    $user_upvoted = 0;
+  else
+    $user_upvoted = $post_upvotes[1];
+
 ?>
 <div class="container">
   <ol class="breadcrumb">
@@ -58,13 +77,13 @@
     </div>
     <div class="col-md-4 col-xs-12">
       <div class="btn-group btn-group-md" role="group" aria-label="...">.
-        <div class="btn btn-default">
+        <div class="btn btn-default <?php echo ($user_upvoted == -1)?"btn-info":""; ?>">
           <i class="glyphicon glyphicon-circle-arrow-up"></i>
         </div>
-        <div class="btn btn-primary active">
+        <div class="btn btn-default active">
           <?php echo ($post_upvotes[0] != NULL)?$post_upvotes[0]:0; ?>
         </div>
-        <div class="btn btn-default">
+        <div class="btn btn-default <?php echo ($user_upvoted == 1)?"btn-danger":""; ?>">
           <i class="glyphicon glyphicon-circle-arrow-down"></i>
         </div>
       </div>

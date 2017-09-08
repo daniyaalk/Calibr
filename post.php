@@ -78,13 +78,13 @@
     </div>
     <div class="col-md-4 col-xs-12">
       <div class="btn-group btn-group-md" role="group" aria-label="...">.
-        <div class="btn btn-default <?php echo ($user_upvoted == -1)?"btn-info":""; ?>" onClick="javascript: vote(1)">
+        <div class="btn btn-default <?php echo ($user_upvoted == 1)?"btn-info":""; ?>" id="vote-up" onClick="javascript: vote(1, <?php echo $post_data[0]?>)">
           <i class="glyphicon glyphicon-circle-arrow-up"></i>
         </div>
         <div class="btn btn-default active">
           <?php echo ($post_upvotes[0] != NULL)?$post_upvotes[0]:0; ?>
         </div>
-        <div class="btn btn-default <?php echo ($user_upvoted == 1)?"btn-danger":""; ?>" onClick="javascript: vote(-1)">
+        <div class="btn btn-default <?php echo ($user_upvoted == -1)?"btn-danger":""; ?>" id="vote-down" onClick="javascript: vote(-1, <?php echo $post_data[0]?>)">
           <i class="glyphicon glyphicon-circle-arrow-down"></i>
         </div>
       </div>

@@ -59,6 +59,9 @@
     //add response
     $response['voted'] = TRUE;
 
+    $newcount = $DB->query("SELECT SUM(type) FROM upvotes WHERE postid={$post_id}")->fetch_row()[0];
+    $response['newcount'] = $newcount;
+
   }
 
   $response['errors'] = $errors;

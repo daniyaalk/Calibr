@@ -60,7 +60,7 @@ CREATE TABLE `topics` (
 CREATE TABLE `upvotes` (
   `id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
-  `type` tinyint(11) NOT NULL COMMENT '1 for upvote; 2 for downvote',
+  `type` tinyint(4) NOT NULL,
   `postid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

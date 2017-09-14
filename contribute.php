@@ -1,9 +1,9 @@
 <?php
 
   require_once "header.php";
-  require_once "app/DB.php";
-  require_once "app/userInfo.php";
-  require 'app/Posts.php';
+  require_once "app/classes/DB.php";
+  require_once "app/classes/UserInfo.php";
+  require 'app/classes/Posts.php';
 
   if(!isset($_SESSION['username'])){
     ?>

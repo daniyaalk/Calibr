@@ -57,6 +57,13 @@ CREATE TABLE `topics` (
   `chapter` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `upvotes` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `type` tinyint(11) NOT NULL COMMENT '1 for upvote; 2 for downvote',
+  `postid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -91,6 +98,9 @@ ALTER TABLE `subjects`
 ALTER TABLE `topics`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `upvotes`
+  ADD PRIMARY KEY (`id`);
+
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
@@ -111,6 +121,8 @@ ALTER TABLE `profiles`
 ALTER TABLE `subjects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `topics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `upvotes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

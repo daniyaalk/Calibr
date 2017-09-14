@@ -2,7 +2,7 @@
 
   require_once "header.php";
 
-  require_once "app/DB.php";
+  require_once "app/classes/DB.php";
   $DB = new DB();
 
   if(isset($_GET['id'])) $topic_id = $_GET['id'];

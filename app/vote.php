@@ -49,7 +49,11 @@
 
     if($check_vote_query->num_rows != 0){
       //frame query to update choice
-      $vote_query = "UPDATE upvotes SET type={$type} WHERE postid={$post_id} AND userid={$UserInfo->userId}";
+      if($check_vote_query->fetch_row()[1] == $type){
+        $vote_query = "DELETE FROM upvotes WHERE postid={$post_id} AND userid={$UserInfo->userId}";
+      }else{
+        $vote_query = "UPDATE upvotes SET type={$type} WHERE postid={$post_id} AND userid={$UserInfo->userId}";
+      }
     }else{
       //frame query to add vote
       $vote_query = "INSERT INTO upvotes VALUES(NULL, {$UserInfo->userId}, {$type}, {$post_id})";

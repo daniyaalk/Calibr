@@ -113,7 +113,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="./">
-            Calibr
+            Calibr<sub>alpha</sub>
           </a>
         </div>
         <ul class="nav navbar-nav navbar-right">
@@ -130,12 +130,17 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
+              <!--Subscriptions will be added in a future release
               <li><a href="#">Subscriptions</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="settings.php">Settings</a></li>
+              -->
+              <li><a href="contribute.php"><i class="fa fa-pencil" aria-hidden="true"></i> My Contributions</a></li>
+              <li role="seperator" class="divider"></li>
+              <li><a href="settings.php"><i class="fa fa-sliders" aria-hidden="true"></i> Settings</a></li>
+              <!-- Profiles will be a feature in a future release.
               <li><a href="myprofile.php">My Profile</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="javascript: logout();">Log Out</a></li>
+              -->
+              <li><a href="javascript: logout();"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
             </ul>
           </li>
           <?php

@@ -3,16 +3,16 @@
   session_start();
   header("Content-Type: text/json");
 
-  require_once "Mail.php";
+  require_once "classes/Mail.php";
   $Mail = new Mail();
 
-  require_once "Validation.php";
+  require_once "classes/Validation.php";
   $Validation = new Validation();
 
-  require_once "DB.php";
+  require_once "classes/DB.php";
   $DB = new DB();
 
-  require_once "userInfo.php";
+  require_once "classes/UserInfo.php";
   $UserInfo = new UserInfo($_SESSION['username'], $DB);
 
   $email = $_POST['email'];
@@ -52,7 +52,7 @@
     //TODO Everything here
     $num = rand();
     $hash = md5($num);
-    $link = "http://localhost/EdProj/Calibr/"."verify.php?key=".$hash;
+    $link = "http://calibracademy.com/"."verify.php?key=".$hash;
 
     //check if user row exists for current user in `profiles` table
     $check_profile_exists = $DB->query("SELECT id FROM profiles WHERE userid={$UserInfo->userId}");

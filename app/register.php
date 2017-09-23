@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require_once("DB.php");
+  require_once("classes/DB.php");
 
   header("Content-Type: text/json");
 

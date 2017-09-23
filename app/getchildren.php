@@ -4,7 +4,7 @@
 
   i.e, for a given grade, it will return all subjects and similarly, will return all chapters for a given subject and all topics for a chapter
 */
-  require_once "DB.php";
+  require_once "classes/DB.php";
   $DB = new DB();
 
   header("Content-Type: text/json");

@@ -2,7 +2,7 @@
   session_start();
   header("Content-Type: text/json");
 
-  require_once "DB.php";
+  require_once "classes/DB.php";
 
   $response = array(
     "auth" => null,

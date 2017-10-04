@@ -15,13 +15,15 @@
       t.id AS t_id, t.name AS t_name,
       c.id AS c_id, c.name AS c_name,
       s.id AS s_id, s.name AS s_name, s.grade AS s_grade,
-      curriculums.id as curriculum_id, curriculums.name AS curriculum_name
+      curriculums.id as curriculum_id, curriculums.name AS curriculum_name,
+      u.username AS u_uname
 
     FROM
       posts AS p, topics AS t,
       chapters AS c,
       subjects AS s,
-      curriculums
+      curriculums,
+      users as u
 
     WHERE
       link='{$link}'
@@ -31,6 +33,7 @@
       AND c.id=t.chapter
       AND s.id=c.subject
       AND curriculums.id=s.curriculum
+      AND u.id=p.id
   ");
   $post_data = $get_data->fetch_row();
 
@@ -68,7 +71,7 @@
 </div>
 <div class="page-header">
   <div class="container">
-    <h1><?php echo $post_data[1];?></h1>
+    <h1><?php echo $post_data[1];?>&nbsp;<div class="post-by"><small>@<?php echo $post_data[12];?></small></div></h1>
   </div>
 </div>
 <div class="container">

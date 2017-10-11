@@ -71,7 +71,14 @@
 </div>
 <div class="page-header">
   <div class="container">
-    <h1><?php echo $post_data[1];?>&nbsp;<div class="post-by"><small>@<?php echo $post_data[12];?></small></div></h1>
+    <h1>
+      <?php echo $post_data[1];?>&nbsp;
+      <div class="post-by">
+        <small>
+          <?php echo (isset($_SESSION['username']) && $post_data[12]==$_SESSION['username'])?"<a class='edit-post-link' href='edit.php?id={$post_data[0]}'>Edit</a>":"@".$post_data[12];?>
+        </small>
+      </div>
+    </h1>
   </div>
 </div>
 <div class="container">

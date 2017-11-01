@@ -33,11 +33,10 @@
       AND c.id=t.chapter
       AND s.id=c.subject
       AND curriculums.id=s.curriculum
-      AND u.id=p.id
+      AND u.id=p.userid
   ");
   $post_data = $get_data->fetch_row();
-
-  if(isset($_SESSION['username']))
+  if(isset($_SESSION['username'])){
     //if session exists, check if user has upvoted post
     $post_upvotes_query = "
     SELECT SUM(type),
@@ -48,7 +47,7 @@
 
     FROM upvotes WHERE postid={$post_data['0']}
     ";
-  else
+  }else
     $post_upvotes_query = "SELECT SUM(type) FROM upvotes WHERE postid={$post_data['0']}";
   $post_upvotes = $DB->query($post_upvotes_query)->fetch_row();
 

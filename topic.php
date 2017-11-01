@@ -47,7 +47,7 @@
       $get_posts = $DB->query("SELECT id, title, link FROM posts WHERE topic={$topic_id}");
 
       while($post = $get_posts->fetch_assoc()){
-        echo '<a href="post.php?p='.$post["link"].'" class="list-group-item">'.$post["title"].'</a>';
+        echo '<a href="post.php?id='.$post["id"].'" class="list-group-item">'.$post["title"].'</a>';
       }
 
     ?>

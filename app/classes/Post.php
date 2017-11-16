@@ -5,7 +5,7 @@
     private $post_data;
 
     public function __construct(DB $DB, $post_id){
-      $post_data = $DB->query("
+      $this->post_data = $DB->query("
         SELECT
           p.id AS p_id, p.title AS p_title, p.text AS p_text,
           t.id AS t_id, t.name AS t_name,
@@ -22,7 +22,7 @@
           users as u
 
         WHERE
-          p.id='{$post_id}'
+          p.id={$post_id}
 
         AND
           t.id=p.topic
@@ -34,7 +34,7 @@
     }
 
     public function getPostData(){
-      return $post_data->fetch_row();
+      return $this->post_data->fetch_row();
     }
 
   }
